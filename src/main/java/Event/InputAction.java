@@ -8,6 +8,8 @@ int keycode;
 	}
 	public static Type calctype(int key) {
 		switch (key) {
+		case KeyEvent.VK_Q:
+			return Action.Type.Q;
 		case KeyEvent.VK_W:
 			return Action.Type.UP;
 		case KeyEvent.VK_A:

@@ -8,7 +8,7 @@ protected int yPos;
 	
 	public abstract void tick();
 	public abstract void render();
-
+	public abstract void gotHit();
 	public int getX() {
 		return xPos;
 	}
@@ -22,4 +22,5 @@ protected int yPos;
 	public void setY(int y) {
 		this.yPos = y;
 	}
+
 }

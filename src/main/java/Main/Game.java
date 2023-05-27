@@ -35,8 +35,12 @@ import Dialogue.DialogueBox;
 import Entities.Mobs.Player;
 import Event.Action;
 import Event.ActionListener;
+import Event.MouseMoved;
+import Event.MousePressed;
 import Graphics.World;
 import Inputs.KeyBoardListener;
+import Inputs.MouseActionListener;
+
 import javax.swing.JTextArea;
 public class Game extends Canvas implements Runnable, ActionListener{
 	/**
@@ -45,7 +49,7 @@ public class Game extends Canvas implements Runnable, ActionListener{
 	private static final long serialVersionUID = 1L;
 	public static final int SIZE = 16; //bit resolution (ALwys 16 since its a 16-bit game)
 	public final static String WORLD_NAME= "Phodeales";
-	private final static String AItoken= "Your Open AI Token Here "; 
+	private final static String AItoken= "Your open AI Token here"; 
 	public static final OpenAiService AIservice= new OpenAiService(AItoken);
 	public static DialogueBox dialogue_input;
 	public static DialogueBox dialogue_output;
@@ -67,6 +71,7 @@ public class Game extends Canvas implements Runnable, ActionListener{
 	BufferStrategy bs;
 	public static Screen screen;
 	KeyBoardListener keyboard;
+	MouseActionListener mouse;
 	World current_world;
 	Player player;
 	Game(){
@@ -99,9 +104,13 @@ public class Game extends Canvas implements Runnable, ActionListener{
 		//keyboard listeners
 		keyboard=new KeyBoardListener(this);
 		this.addKeyListener(keyboard);
+		//mouse listener
+		mouse= new MouseActionListener(this);
+		this.addMouseListener(mouse);
+		this.addMouseMotionListener(mouse);
 		//player & world
 		player=new Player(5*SIZE,4*SIZE);
-		current_world= new World("/tilemapbeta.png",player);
+		current_world= new World("/background.png",player);
 		
 		
 		

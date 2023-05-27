@@ -6,13 +6,17 @@ import Event.Action;
 import Event.ActionListener;
 import Event.KeyPressed;
 import Event.KeyReleased;
+import Event.MousePressed;
 import Graphics.Sprite;
+import Inventory.Inventory;
 import Main.Game;
 
 public class Player extends Mob implements ActionListener{
 	 DialogueBox dialogue_input= Game.dialogue_input;
 	 public boolean inDialogue;
+	 public boolean inInventory=false;
 	 private Talkable talkingTo = null;
+	 private Inventory inventory;
 	 
 	 
 	public Player(int xPos, int yPos){
@@ -27,11 +31,13 @@ public class Player extends Mob implements ActionListener{
 		left1=Sprite.player_left1;
 		left2=Sprite.player_left2;
 		down1=Sprite.player_down1;
-		down2=Sprite.player_down2;	
+		down2=Sprite.player_down2;
+		this.inventory= Inventory.inventory;
 	}
 
 	public void render() {
 		Game.screen.render_player(this);
+		
 	}
 	public void tick() {
 		super.tick();
@@ -46,6 +52,7 @@ public class Player extends Mob implements ActionListener{
 			Letter(a); // adds selected letter to dialogue_input box;
 			return;
 		}
+		
 		//outside of dialogue actions
 		if(a instanceof KeyPressed) {
 			switch (a.type) {
@@ -65,6 +72,9 @@ public class Player extends Mob implements ActionListener{
 				right=true;
 				moving=true;
 				break;
+			case Q:
+				this.inInventory = (this.inInventory ? false:true);
+				break;
 			}
 		}
 		if(a instanceof KeyReleased) {
@@ -82,6 +92,8 @@ public class Player extends Mob implements ActionListener{
 				moving=false;
 			}
 		}
+		if(a instanceof MousePressed)
+			return;
 		
 	}
 	public void startDialogue(Talkable t) {
@@ -102,6 +114,8 @@ public class Player extends Mob implements ActionListener{
 				 return;
 			 case UP:
 				 dialogue_input.addText('w');
+			 case Q:
+				 dialogue_input.addText('q');
 				 return;
 			 case LEFT:
 				 dialogue_input.addText('a');

@@ -29,4 +29,17 @@ public void load(){
 		System.out.println("Error loading image...");
 	}
 }
+public void load(String path){
+	try {   
+		img=ImageIO.read(GraphicLoadable.class.getResource(path));
+		width=img.getWidth();
+		height= img.getHeight();
+		pixels=new int[width*height];
+		img.getRGB(0, 0, width, height, pixels, 0, width);
+		//((DataBufferInt)img.getRaster().getDataBuffer()).getData();
+	} catch (IOException e) {
+		e.printStackTrace();
+		System.out.println("Error loading image...");
+	}
+}
 }

@@ -32,6 +32,8 @@ public static enum Type{
 	N,
 	M,
 	SPACE,
+	MOUSEMOVED,
+	MOUSEPRESSED,
 	BLANK;
 	
 }
