@@ -1,5 +1,6 @@
 # FarmerLife
-This is a game that incorporates AI NPC dialgoue written 100% inpure java. 
+This is a game that incorporates AI NPC dialgoue written 100% in pure java.
+It incorporates components of the Java.awt library, Java.swing library A\* search algroithm , rotational matrix math and basic game development principles.
 In this project I incorporated building the game engine and the game itself.
 It's a game about collecting wheat as a farmer. Iplan to expand the game however the main functionality is pretty much complete and the rest is just polishing the game to actually be entertaining.
 
