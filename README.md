@@ -6,10 +6,15 @@ It's a game about collecting wheat as a farmer. Iplan to expand the game however
 ###
 
 
-
-[<p align="center"><img src="https://img.shields.io/bitbucket/issues/Jkm036/FarmerLife?style=plastic"/><img src="https://img.shields.io/github/commit-activity/w/Jkm036/FarmerLife?style=plastic" align-left="center"/><img src="https://img.shields.io/github/license/Jkm036/FarmerLife"/></p>](https://github.com/Jkm036/FarmerLife)
-
-
+<div align="center">
+  
+  <a href="">![license](https://img.shields.io/github/license/Jkm036/FarmerLife)</a>
+  <a href="">![commit](https://img.shields.io/github/last-commit/Jkm036/FarmerLife)</a>
+   <a href="">![weekly commits](https://img.shields.io/github/commit-activity/w/Jkm036/FarmerLife)</a>
+  <a href="">![issues](https://img.shields.io/github/issues/Jkm036/FarmerLife)</a>
+  <a href="">![stars](https://img.shields.io/github/stars/Jkm036/FarmerLife?style=social)</a>
+  
+</div>
 
 
 <img src="https://github.com/Jkm036/FarmerLife/assets/93635097/a561603c-e0a5-4020-b935-8223de978650" width="250" />
